@@ -355,111 +355,106 @@ a{
 }
 
 
+#hello {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #ddd;           
+    overflow: hidden;
+    margin: calc(40vh - 120px) calc(25% - 1px);
+    z-index: 999999999;
+    background-color: #343541;
+}
 
-       
+#inputName {
+    height: 26px;
+    width: 80%;
+    margin: 5px auto;
+    background-color: #343541;
+    display: flex;
+    border-radius: 2px;
+    margin: 2rem auto;
+    margin-bottom: 1rem;
+}
 
-        
+#name {
+    width: 80%;
+    border: none;
+    outline: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    padding-left: 0.5rem;
+    letter-spacing: 1px;
+    font-family: monospace;
+    font-size: larger;
+}
 
+#btn {
+    height: 100%;
+    width: 20%;
+    outline: none;
+    background-color: #ccc;
+    border: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
 
-        #hello {
-            position: absolute;
-            width: 50%;
-            height: auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            color: #ddd;           
-            overflow: hidden;
-            margin: calc(40vh - 120px) calc(25% - 1px);
-            z-index: 999999999;
-            background-color: #343541;
-        }
+#crossTab {
+    height: 2rem;
+    width: 100%;
+    border-bottom: 1px solid #f1e7e7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #2f2f2f;
+}
 
-        #inputName {
-            height: 26px;
-            width: 80%;
-            margin: 5px auto;
-            background-color: #343541;
-            display: flex;
-            border-radius: 2px;
-            margin: 2rem auto;
-            margin-bottom: 1rem;
-        }
+#lines{
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow: auto;
+    background-color: #343541;
+    font-family: monospace;
+    font-size: larger;
+}
 
-        #name {
-            width: 80%;
-            border: none;
-            outline: none;
-            border-top-left-radius: 2px;
-            border-bottom-left-radius: 2px;
-            padding-left: 0.5rem;
-            letter-spacing: 1px;
-            font-family: monospace;
-            font-size: larger;
-        }
+#blink1, #blink2, #blink3 {
+    background-color: #ddd;
+    animation: blink 0.7s linear infinite;
+}
 
-        #btn {
-            height: 100%;
-            width: 20%;
-            outline: none;
-            background-color: #ccc;
-            border: none;
-            border-top-right-radius: 2px;
-            border-bottom-right-radius: 2px;
-        }
-
-        #crossTab {
-            height: 2rem;
-            width: 100%;
-            border-bottom: 1px solid #f1e7e7;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            background-color: #2f2f2f;
-        }
-
-        #lines{
-            width: 80%;
-            padding-left: 10%;
-            padding-right: 10%;
-            overflow: auto;
-            background-color: #343541;
-            font-family: monospace;
-            font-size: larger;
-        }
-
-        #blink1, #blink2, #blink3 {
-            background-color: #ddd;
-            animation: blink 0.7s linear infinite;
-        }
-        @keyframes blink {
-            0%{
-                opacity: 1;
-            }
-            50%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
-        }
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 
-        #blur {
-            position: absolute;
-            height: 100vh;
-            width: 100%;
-            background-color: #000000ad;
-            filter: blur(10px);
-            z-index: 99999;
-        }
+#blur {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000ad;
+    filter: blur(10px);
+    z-index: 99999;
+}
 
-        #moreNotes{
-            padding: 2px 5px;
-            height: auto;
-            width: calc(80% - 2px);
-            border: 1px solid #999;
-            border-radius: 5px;
-        }
+#moreNotes{
+    padding: 2px 5px;
+    height: auto;
+    width: calc(80% - 2px);
+    border: 1px solid #999;
+    border-radius: 5px;
+}
 
 
 
@@ -513,8 +508,12 @@ a{
         padding: 10px;
     }
     
+    #name {
+        letter-spacing: 0;
+    }
     
 }
+
 
     </style>
 </head>
@@ -584,13 +583,12 @@ a{
                     <span id="size">100%</span>
                     <button id="increase">+</button> 
                 </div>                                            
-              </div>
+            </div>
             <p class="text">text align</p> 
             <select id="alignment">
                 <option value="option1">Left (Default)</option>
                 <option value="option2">justify</option>
-            </select>
-            
+            </select>        
             </div>
         </div>
         
@@ -609,9 +607,7 @@ a{
                 <div style="display: flex;">
                     <span class="material-symbols-outlined" style="color: inherit;">add</span>
                     <span>More Notes</span> 
-                </div>
-                
-                
+                </div>             
                 <p id="inProgress" style="font-size: smaller;display: none;padding-left: 2rem;">In Progress</p>
             </div>
             
@@ -622,7 +618,6 @@ a{
 
       
 <div id="container">
-
 
     <div id="operatingSystem">
         <br><h1>Operating Systems</h1><br>
@@ -1613,8 +1608,7 @@ is known as broadcasting. DHCP and ARP in the local network use broadcasting.</p
                     <p><a href="#t17">Page Replacement Algorithms (Imp)</a></p>
                     <p><a href="#t18">Disk Scheduling</a></p>
                     <p><a href="#t19">Disk Scheduling Algorithms (Imp)</a></p>
-                    <p><a href="#t20">Key Terms</a></p>
-                    
+                    <p><a href="#t20">Key Terms</a></p>                  
                 </div>
             </div>
         </div>
@@ -2002,6 +1996,7 @@ moreNote.addEventListener('click', function() {
     }
     
 });
+
     </script>
 </body>
 </html>
