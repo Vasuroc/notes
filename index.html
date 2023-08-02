@@ -619,418 +619,418 @@
 <div id="container">
 
     <div id="operatingSystem">
+
         <br><h1>Operating Systems</h1><br>
-
-    <br id="t11">An <h4>Operating System</h4> can be defined as <u>an interface between user and hardware</u>. It
-    is responsible for the execution of all the processes, Resource Allocation, CPU
-    management, File Management and many other tasks. The purpose of an operating
-    system is to provide an environment in which a user can execute programs in a
-    convenient and efficient manner.<br>
-    
-    <br><h4>Types of Operating Systems :</h4><br>
-    <ol>
-        <li><b>Batch OS :</b> A set of similar jobs are stored in the main memory for execution. A job gets
-    assigned to the CPU, only when the execution of the previous job completes.</li><br>
-    
-        <li><b>Multiprogramming OS :</b> The main memory consists of jobs waiting for CPU time. The
-    OS selects one of the processes and assigns it to the CPU. Whenever the executing
-    process needs to wait for any other operation (like I/O), the OS selects another process
-    from the job queue and assigns it to the CPU. <u>This way, the CPU is never kept idle</u>
-    and the user gets the flavor of getting multiple tasks done at once.</li><br>
-    
-        <li><b>Multitasking OS :</b> Multitasking OS combines the benefits of <u>Multiprogramming OS
-    and CPU scheduling</u> to perform quick switches between jobs. The switch is so quick
-    that the user can interact with each program as it runs.</li><br>
-    
-        <li><b>Time Sharing OS :</b> Time-sharing systems require interaction with the user to instruct
-    the OS to perform various tasks. The OS responds with an output. The instructions are
-    usually given through an input device like the keyboard.</li><br>
-    
-        <li><b>Real Time OS :</b> Real-Time OS are usually built for dedicated systems to accomplish a
-    specific set of tasks within deadlines.</li><br>
-    </ol>
-     
-    <br><h4>Process :</h4> A process is a program under execution. <u>The value of the program counter
-    (PC) indicates the address of the next instruction of the process being executed.</u>
-    Each process is represented by a Process Control Block (PCB).
-    
-    <br><br><h4>Process Scheduling :</h4><br>
-    <ol>
-        <li><b>Arrival Time :</b> Time at which the process arrives in the ready queue.</li>
-        <li><b>Completion Time :</b> Time at which process completes its execution.</li>
-        <li><b>Burst Time :</b> Time required by a process for CPU execution.</li>
-        <li><b>Turn Around Time :</b> Time Difference between completion time and arrival time.
-                   <br><u>Turn Around Time = Completion Time - Arrival Time</u></li>
-        <li><b>Waiting Time (WT) :</b> Time Difference between turn around time and burst time.
-                   <br><u>Waiting Time = Turnaround Time - Burst Time</u></li>
+        <br id="t11">An <h4>Operating System</h4> can be defined as <u>an interface between user and hardware</u>. It
+        is responsible for the execution of all the processes, Resource Allocation, CPU
+        management, File Management and many other tasks. The purpose of an operating
+        system is to provide an environment in which a user can execute programs in a
+        convenient and efficient manner.<br>
         
-    </ol>
-    
-    
-    <br><br id="t12"><p><h4>Thread (Imp) :</h4> A thread is a lightweight process and forms the basic unit of
-    CPU utilization. A process can perform more than one task at the same time by including
-    multiple threads.</p>
-    <ul>
-        <li>A thread has its own program counter, register set, and stack.</li>
-        <li>A thread shares resources with other threads of the same process: the code section,
-    the data section, files and signals.</li>
-    </ul>
-     
-    <p><b>Note :</b> A new thread, or a child process of a given process, can be introduced by using
-    the fork() system call. A process with n fork() system call generates 2^n - 1 child
-    processes.</p>
-    
-    <br><h4>There are two types of threads :</h4>
-    <ul>
-        <li>User threads (User threads are implemented by users)</li>
-        <li>Kernel threads (Kernel threads are implemented by OS)</li>
-    </ul>
-    
-    <br id="t13"><h4>Scheduling Algorithms :</h4><br>
-    <ol>
-        <li><b>First Come First Serve (FCFS) :</b> Simplest scheduling algorithm that
-    schedules according to arrival times of processes.</li><br>
-    
-        <li><b>Shortest Job First (SJF) :</b> Processes which have the shortest burst time are
-    scheduled first.</li><br>
-    
-        <li><b>Shortest Remaining Time First (SRTF) :</b> It is a preemptive mode of SJF
-    algorithm in which jobs are scheduled according to the shortest remaining
-    time.</li><br>
-    
-        <li><b>Round Robin (RR) Scheduling :</b> Each process is assigned a fixed time, in a
-    cyclic way.</li><br>
-    
-        <li><b>Priority Based scheduling (Non Preemptive) :</b> In this scheduling, processes
-    are scheduled according to their priorities, i.e., highest priority process is
-    scheduled first. If priorities of two processes match, then scheduling is
-    according to the arrival time.</li><br>
-    
-        <li><b>Highest Response Ratio Next (HRRN) :</b> In this scheduling, processes with
-    the highest response ratio are scheduled. This algorithm avoids starvation.
-    <br><u>Response Ratio = (Waiting Time + Burst time) / Burst time</u></li><br>
-    
-        <li><b>Multilevel Queue Scheduling (MLQ) :</b> According to the priority of the
-    process, processes are placed in the different queues. Generally high priority
-    processes are placed in the top level queue. Only after completion of
-    processes from the top level queue, lower level queued processes are
-    scheduled.</li><br>
-    
-        <li><b>Multilevel Feedback Queue (MLFQ) Scheduling :</b> It allows the process to
-    move in between queues. The idea is to separate processes according to the
-    characteristics of their CPU bursts. If a process uses too much CPU time, it is
-    moved to a lower-priority queue.</li><br>
-    
-    </ol>
-    
-    <br><h4>The Critical Section Problem :</h4><br>
-    <ol>
-        <li><b>Critical Section :</b> The portion of the code in the program where shared variables
-    are accessed and/or updated.</li><br>
-        <li><b>Remainder Section :</b> The remaining portion of the program excluding the Critical
-    Section.</li><br>
-        <li><b>Race around Condition :</b> The final output of the code depends on the order in
-    which the variables are accessed. This is termed as the race around condition.</li><br>
-        
-    </ol>
-    
-    <p>A solution for the critical section problem must satisfy the following three conditions :</p>
-    <ol>
-        <li><b>Mutual Exclusion :</b> If a process Pi is executing in its critical section, then no other
-    process is allowed to enter into the critical section.</li><br>
-    
-        <li><b>Progress :</b> If no process is executing in the critical section, then the decision of a
-    process to enter a critical section cannot be made by any other process that is
-    executing in its remainder section. The selection of the process cannot be postponed
-    indefinitely.</li><br>
-    
-        <li><b>Bounded Waiting :</b> There exists a bound on the number of times other processes
-    can enter into the critical section after a process has made a request to access the
-    critical section and before the request is granted.</li><br>
-    </ol>
-    
-    <br id="t14"><h4>Synchronization Tools :</h4><br>
-    
-    <p><b>Semaphore :</b> Semaphore is a protected variable or abstract data type that is
-    used to lock the resource being used. The value of the semaphore indicates the
-    status of a common resource.</p>
-    
-    <p>There are two types of semaphores:</p>
-    <ol>
-        <li><b>Binary semaphores :</b> Binary semaphores take only 0 and 1 as value and are used
-    to implement mutual exclusion and synchronize concurrent processes.</li>
-        <li><b>Counting semaphores :</b> A counting semaphore is an integer variable whose value
-    can range over an unrestricted domain.</li>
-    </ol>
-    
-    <p><b>Mutex :</b> A mutex provides mutual exclusion, either producer or consumer can
-    have the key (mutex) and proceed with their work. As long as the buffer is filled
-    by the producer, the consumer needs to wait, and vice versa.
-    At any point of time, only one thread can work with the entire buffer. The concept
-    can be generalized using semaphore.</p>
-    
-    <br id="t15"><h4>Deadlocks (Imp) :</h4><br>
-    
-    <p>A situation where a set of processes are blocked because each process is holding a
-    resource and waiting for another resource acquired by some other process. Deadlock
-    can arise if following four conditions hold simultaneously (Necessary Conditions):</p>
-    <ol>
-        <li><b>Mutual Exclusion :</b> One or more than one resource is non-sharable (Only one
-    process can use at a time).</li>
-        <li><b>Hold and Wait :</b> A process is holding at least one resource and waiting for
-    resources.</li>
-        <li><b>No Preemption :</b> A resource cannot be taken from a process unless the process
-    releases the resource.</li>
-        <li><b>Circular Wait :</b> A set of processes are waiting for each other in circular form.</li>
-
-    </ol>
-     
-    <br><h4>Methods for handling deadlock :</h4> 
-    <p>There are three ways to handle deadlock:</p>
-    <ol>
-        <li><b>Deadlock prevention or avoidance :</b> The idea is to not let the system into a
-    deadlock state.</li>
-        <li><b>Deadlock detection and recovery :</b> Let deadlock occur, then do preemption to
-    handle it once occurred.</li>
-        <li><b>Ignore the problem all together :</b> If deadlock is very rare, then let it happen and
-    reboot the system. This is the approach that both Windows and UNIX take.</li>
-    </ol>
-    
-    <br><p><h4>Banker's algorithm</h4> is used to avoid deadlock. It is one of the deadlock-avoidance
-    methods. It is named as Banker's algorithm on the banking system where a bank
-    never allocates available cash in such a manner that it can no longer satisfy the
-    requirements of all of its customers.</p>
-    
-    <br id="t16"><h4>Memory Management :</h4>
-    <p>These techniques allow the memory to be shared among multiple processes.</p>
-    <ul>
-        <li><b>Overlays :</b> The memory should contain only those instructions and data that are
-    required at a given time.</li>
-        <li><b>Swapping :</b> In multiprogramming, the instructions that have used the time slice are
-    swapped out from the memory.</li>
-
-    </ul>
-    
-    <br><h4>Techniques :</h4>
-    <ol style="list-style-type: lower-alpha;">
-        <li><b>Single Partition Allocation Schemes :</b> The memory is divided into two parts. One
-    part is kept to be used by the OS and the other is kept to be used by the users.</li><br>
-        <li><b>Multiple Partition Schemes :</b>
+        <br><h4>Types of Operating Systems :</h4><br>
         <ol>
-            <li><b>Fixed Partition :</b> The memory is divided into fixed size partitions.</li>
-            <li><b>Variable Partition :</b> The memory is divided into variable sized partitions.</li>
-        </ol></li>
-    </ol>
-     
-    <p><b>Note :</b> Variable partition allocation schemes:</p>
-    <ol>
-        <li><b>First Fit :</b> The arriving process is allotted the first hole of memory in which it fits
-    completely.</li>
-        <li><b>Best Fit :</b> The arriving process is allotted the hole of memory in which it fits the best
-    by leaving the minimum memory empty.</li>
-        <li><b>Worst Fit :</b> The arriving process is allotted the hole of memory in which it leaves the
-    maximum gap.</li>
-    </ol>
-    
-    <br><h4>Note :</h4><br>
-    <ul>
-        <li>Best fit does not necessarily give the best results for memory allocation.</li>
-        <li>The cause of external fragmentation is the condition in Fixed partitioning and
-    Variable partitioning saying that the entire process should be allocated in a
-    contiguous memory location.Therefore <b>Paging</b> is used.</li>
-    </ul>
-    
-    <ol>
-        <li><b>Paging :</b> The physical memory is divided into equal sized frames. The main memory
-    is divided into fixed size pages. The size of a physical memory frame is equal to the
-    size of a virtual memory frame.</li>
-        <li><b>Segmentation :</b> Segmentation is implemented to give users a view of memory. The
-    logical address space is a collection of segments. Segmentation can be implemented
-    with or without the use of paging.</li>
-    </ol>
-     
-    <p><b>Page Fault :</b></p>
-    <p>A page fault is a type of interrupt, raised by the hardware when a running program accesses a
-    memory page that is mapped into the virtual address space, but not loaded in physical memory.</p>
+            <li><b>Batch OS :</b> A set of similar jobs are stored in the main memory for execution. A job gets
+        assigned to the CPU, only when the execution of the previous job completes.</li><br>
+        
+            <li><b>Multiprogramming OS :</b> The main memory consists of jobs waiting for CPU time. The
+        OS selects one of the processes and assigns it to the CPU. Whenever the executing
+        process needs to wait for any other operation (like I/O), the OS selects another process
+        from the job queue and assigns it to the CPU. <u>This way, the CPU is never kept idle</u>
+        and the user gets the flavor of getting multiple tasks done at once.</li><br>
+        
+            <li><b>Multitasking OS :</b> Multitasking OS combines the benefits of <u>Multiprogramming OS
+        and CPU scheduling</u> to perform quick switches between jobs. The switch is so quick
+        that the user can interact with each program as it runs.</li><br>
+        
+            <li><b>Time Sharing OS :</b> Time-sharing systems require interaction with the user to instruct
+        the OS to perform various tasks. The OS responds with an output. The instructions are
+        usually given through an input device like the keyboard.</li><br>
+        
+            <li><b>Real Time OS :</b> Real-Time OS are usually built for dedicated systems to accomplish a
+        specific set of tasks within deadlines.</li><br>
+        </ol>
+        
+        <br><h4>Process :</h4> A process is a program under execution. <u>The value of the program counter
+        (PC) indicates the address of the next instruction of the process being executed.</u>
+        Each process is represented by a Process Control Block (PCB).
+        
+        <br><br><h4>Process Scheduling :</h4><br>
+        <ol>
+            <li><b>Arrival Time :</b> Time at which the process arrives in the ready queue.</li>
+            <li><b>Completion Time :</b> Time at which process completes its execution.</li>
+            <li><b>Burst Time :</b> Time required by a process for CPU execution.</li>
+            <li><b>Turn Around Time :</b> Time Difference between completion time and arrival time.
+                    <br><u>Turn Around Time = Completion Time - Arrival Time</u></li>
+            <li><b>Waiting Time (WT) :</b> Time Difference between turn around time and burst time.
+                    <br><u>Waiting Time = Turnaround Time - Burst Time</u></li>
+            
+        </ol>
+        
+        
+        <br><br id="t12"><p><h4>Thread (Imp) :</h4> A thread is a lightweight process and forms the basic unit of
+        CPU utilization. A process can perform more than one task at the same time by including
+        multiple threads.</p>
+        <ul>
+            <li>A thread has its own program counter, register set, and stack.</li>
+            <li>A thread shares resources with other threads of the same process: the code section,
+        the data section, files and signals.</li>
+        </ul>
+        
+        <p><b>Note :</b> A new thread, or a child process of a given process, can be introduced by using
+        the fork() system call. A process with n fork() system call generates 2^n - 1 child
+        processes.</p>
+        
+        <br><h4>There are two types of threads :</h4>
+        <ul>
+            <li>User threads (User threads are implemented by users)</li>
+            <li>Kernel threads (Kernel threads are implemented by OS)</li>
+        </ul>
+        
+        <br id="t13"><h4>Scheduling Algorithms :</h4><br>
+        <ol>
+            <li><b>First Come First Serve (FCFS) :</b> Simplest scheduling algorithm that
+        schedules according to arrival times of processes.</li><br>
+        
+            <li><b>Shortest Job First (SJF) :</b> Processes which have the shortest burst time are
+        scheduled first.</li><br>
+        
+            <li><b>Shortest Remaining Time First (SRTF) :</b> It is a preemptive mode of SJF
+        algorithm in which jobs are scheduled according to the shortest remaining
+        time.</li><br>
+        
+            <li><b>Round Robin (RR) Scheduling :</b> Each process is assigned a fixed time, in a
+        cyclic way.</li><br>
+        
+            <li><b>Priority Based scheduling (Non Preemptive) :</b> In this scheduling, processes
+        are scheduled according to their priorities, i.e., highest priority process is
+        scheduled first. If priorities of two processes match, then scheduling is
+        according to the arrival time.</li><br>
+        
+            <li><b>Highest Response Ratio Next (HRRN) :</b> In this scheduling, processes with
+        the highest response ratio are scheduled. This algorithm avoids starvation.
+        <br><u>Response Ratio = (Waiting Time + Burst time) / Burst time</u></li><br>
+        
+            <li><b>Multilevel Queue Scheduling (MLQ) :</b> According to the priority of the
+        process, processes are placed in the different queues. Generally high priority
+        processes are placed in the top level queue. Only after completion of
+        processes from the top level queue, lower level queued processes are
+        scheduled.</li><br>
+        
+            <li><b>Multilevel Feedback Queue (MLFQ) Scheduling :</b> It allows the process to
+        move in between queues. The idea is to separate processes according to the
+        characteristics of their CPU bursts. If a process uses too much CPU time, it is
+        moved to a lower-priority queue.</li><br>
+        
+        </ol>
+        
+        <br><h4>The Critical Section Problem :</h4><br>
+        <ol>
+            <li><b>Critical Section :</b> The portion of the code in the program where shared variables
+        are accessed and/or updated.</li><br>
+            <li><b>Remainder Section :</b> The remaining portion of the program excluding the Critical
+        Section.</li><br>
+            <li><b>Race around Condition :</b> The final output of the code depends on the order in
+        which the variables are accessed. This is termed as the race around condition.</li><br>
+            
+        </ol>
+        
+        <p>A solution for the critical section problem must satisfy the following three conditions :</p>
+        <ol>
+            <li><b>Mutual Exclusion :</b> If a process Pi is executing in its critical section, then no other
+        process is allowed to enter into the critical section.</li><br>
+        
+            <li><b>Progress :</b> If no process is executing in the critical section, then the decision of a
+        process to enter a critical section cannot be made by any other process that is
+        executing in its remainder section. The selection of the process cannot be postponed
+        indefinitely.</li><br>
+        
+            <li><b>Bounded Waiting :</b> There exists a bound on the number of times other processes
+        can enter into the critical section after a process has made a request to access the
+        critical section and before the request is granted.</li><br>
+        </ol>
+        
+        <br id="t14"><h4>Synchronization Tools :</h4><br>
+        
+        <p><b>Semaphore :</b> Semaphore is a protected variable or abstract data type that is
+        used to lock the resource being used. The value of the semaphore indicates the
+        status of a common resource.</p>
+        
+        <p>There are two types of semaphores:</p>
+        <ol>
+            <li><b>Binary semaphores :</b> Binary semaphores take only 0 and 1 as value and are used
+        to implement mutual exclusion and synchronize concurrent processes.</li>
+            <li><b>Counting semaphores :</b> A counting semaphore is an integer variable whose value
+        can range over an unrestricted domain.</li>
+        </ol>
+        
+        <p><b>Mutex :</b> A mutex provides mutual exclusion, either producer or consumer can
+        have the key (mutex) and proceed with their work. As long as the buffer is filled
+        by the producer, the consumer needs to wait, and vice versa.
+        At any point of time, only one thread can work with the entire buffer. The concept
+        can be generalized using semaphore.</p>
+        
+        <br id="t15"><h4>Deadlocks (Imp) :</h4><br>
+        
+        <p>A situation where a set of processes are blocked because each process is holding a
+        resource and waiting for another resource acquired by some other process. Deadlock
+        can arise if following four conditions hold simultaneously (Necessary Conditions):</p>
+        <ol>
+            <li><b>Mutual Exclusion :</b> One or more than one resource is non-sharable (Only one
+        process can use at a time).</li>
+            <li><b>Hold and Wait :</b> A process is holding at least one resource and waiting for
+        resources.</li>
+            <li><b>No Preemption :</b> A resource cannot be taken from a process unless the process
+        releases the resource.</li>
+            <li><b>Circular Wait :</b> A set of processes are waiting for each other in circular form.</li>
 
-                                 
-    
-    <br><br id="t17"><h4>Page Replacement Algorithms (Imp) :</h4><br>
-    <ol>
-        <li><h4>First In First Out (FIFO) :</h4><br>
-            <p>This is the simplest page replacement algorithm. In this algorithm, the operating
-    system keeps track of all pages in the memory in a queue, the oldest page is in the
-    front of the queue. When a page needs to be replaced, the page in the front of the
-    queue is selected for removal.</p>
-            <p>For example, consider page reference string 1, 3, 0, 3, 5, 6 and 3 page slots. Initially,
-    all slots are empty, so when 1, 3, 0 come they are allocated to the empty slots —> 3
-    Page Faults. When 3 comes, it is already in memory so —> 0 Page Faults. Then 5
-    comes, it is not available in memory so it replaces the oldest page slot i.e 1. —> 1
-    Page Fault. Finally, 6 comes, it is also not available in memory so it replaces the
-    oldest page slot i.e 3 —> 1 Page Fault.</p>
+        </ol>
+        
+        <br><h4>Methods for handling deadlock :</h4> 
+        <p>There are three ways to handle deadlock:</p>
+        <ol>
+            <li><b>Deadlock prevention or avoidance :</b> The idea is to not let the system into a
+        deadlock state.</li>
+            <li><b>Deadlock detection and recovery :</b> Let deadlock occur, then do preemption to
+        handle it once occurred.</li>
+            <li><b>Ignore the problem all together :</b> If deadlock is very rare, then let it happen and
+        reboot the system. This is the approach that both Windows and UNIX take.</li>
+        </ol>
+        
+        <br><p><h4>Banker's algorithm</h4> is used to avoid deadlock. It is one of the deadlock-avoidance
+        methods. It is named as Banker's algorithm on the banking system where a bank
+        never allocates available cash in such a manner that it can no longer satisfy the
+        requirements of all of its customers.</p>
+        
+        <br id="t16"><h4>Memory Management :</h4>
+        <p>These techniques allow the memory to be shared among multiple processes.</p>
+        <ul>
+            <li><b>Overlays :</b> The memory should contain only those instructions and data that are
+        required at a given time.</li>
+            <li><b>Swapping :</b> In multiprogramming, the instructions that have used the time slice are
+        swapped out from the memory.</li>
 
-            <p><b>Belady's anomaly :</b>
-    Belady's anomaly proves that it is possible to have more page faults when increasing
-    the number of page frames while using the First in First Out (FIFO) page
-    replacement algorithm. For example, if we consider reference string ( 3 2 1 0
-    3 2 4 3 2 1 0 4 ) and 3 slots, we get 9 total page faults, but if we
-    increase slots to 4, we get 10 page faults.</p></li><br>
-    
-        <li><h4>Optimal Page replacement :</h4><br>
-            <p>In this algorithm, pages are replaced which are not used for the longest duration of
-    time in the future.</p>
-            <p>Let us consider page reference string 7 0 1 2 0 3 0 4 2 3 0 3 2 and 4 page slots.
-    Initially, all slots are empty, so when 7 0 1 2 are allocated to the empty slots —> 4
-    Page faults. 0 is already there so —> 0 Page fault. When 3 came it will take the
-    place of 7 because it is not used for the longest duration of time in the future.—> 1
-    Page fault. 0 is already there so —> 0 Page fault. 4 will takes place of 1 —> 1 Page
-    Fault. Now for the further page reference string —> 0 Page fault because they are
-    already available in the memory.</p>
-            <p>Optimal page replacement is perfect, but not possible in practice as an operating
-    system cannot know future requests. The use of Optimal Page replacement is to set
-    up a benchmark so that other replacement algorithms can be analyzed against it.</p></li><br>
-    
-        <li><h4>Least Recently Used (LRU) :</h4><br>
-            <p>In this algorithm, the page will be replaced with the one which is least recently used.
-    Let say the page reference string 7 0 1 2 0 3 0 4 2 3 0 3 2 . Initially, we had 4-page
-    slots empty. Initially, all slots are empty, so when 7 0 1 2 are allocated to the empty
-    slots —> 4 Page faults. 0 is already there so —> 0 Page fault. When 3 comes it will
-    take the place of 7 because it is least recently used —> 1 Page fault. 0 is already in
-    memory so —> 0 Page fault. 4 will take place of 1 —> 1 Page Fault. Now for the
-    further page reference string —> <b>0 Page fault</b> because they are already available in
-    the memory.</p></li>
-    </ol>
-    
-    
-    <br><br id="t18"><h4>Disk Scheduling :</h4> Disk scheduling is done by operating systems to schedule I/O
-    requests arriving for disk. Disk scheduling is also known as I/O scheduling.</br>
-    <ol>
-        <li><b>Seek Time :</b> Seek time is the time taken to locate the disk arm to a specified track
-    where the data is to be read or written.</li><br>
-        <li><b>Rotational Latency :</b> Rotational Latency is the time taken by the desired sector of
-    disk to rotate into a position so that it can access the read/write heads.</li><br>
-        <li><b>Transfer Time :</b> Transfer time is the time to transfer the data. It depends on the
-    rotating speed of the disk and number of bytes to be transferred.</li><br>
-        <li><b>Disk Access Time :</b> Seek Time + Rotational Latency + Transfer Time</li><br>
-        <li><b>Disk Response Time :</b> Response Time is the average of time spent by a request
-    waiting to perform its I/O operation. Average Response time is the response time of
-    all requests.</li><br>
-    </ol>
-    
-    
-    
-    <br id="t19"><h4>Disk Scheduling Algorithms (Imp) :</h4><br>
-    <ol>
-        <li><b>FCFS :</b> FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the
-    requests are addressed in the order they arrive in the disk queue.</li><br>
-    
-        <li><b>SSTF :</b> In SSTF (Shortest Seek Time First), requests having the shortest seek time
-    are executed first. So, the seek time of every request is calculated in advance in a
-    queue and then they are scheduled according to their calculated seek time. As a
-    result, the request near the disk arm will get executed first.</li><br>
-    
-        <li><b>SCAN :</b> In SCAN algorithm the disk arm moves into a particular direction and
-    services the requests coming in its path and after reaching the end of the disk, it
-    reverses its direction and again services the request arriving in its path. So, <u>this
-    algorithm works like an elevator and hence is also known as elevator algorithm</u>.</li><br>
-    
-        <li><b>CSCAN :</b> In SCAN algorithm, the disk arm again scans the path that has been
-    scanned, after reversing its direction. So, it may be possible that too many requests
-    are waiting at the other end or there may be zero or few requests pending at the
-    scanned area</li><br>
-        <li><b>LOOK :</b> It is similar to the SCAN disk scheduling algorithm except for the difference
-    that the disk arm in spite of going to the end of the disk goes only to the last request
-    to be serviced in front of the head and then reverses its direction from there only.
-    Thus it prevents the extra delay which occurred due to unnecessary traversal to the
-    end of the disk.</li><br>
-        <li><b>CLOOK :</b> As LOOK is similar to SCAN algorithm, CLOOK is similar to CSCAN disk
-    scheduling algorithm. In CLOOK, the disk arm in spite of going to the end goes only
-    to the last request to be serviced in front of the head and then from there goes to the
-    other end's last request. Thus, it also prevents the extra delay which occurred due to
-    unnecessary traversal to the end of the disk.</li><br>
-    </ol>
-                      
-    <br><hr><br id="t20">                        
-    
-    <h3>Key Terms</h3><br>
-    
-    <p><h4>Real-time system :</h4> It is used in the case when rigid-time requirements have been
-    placed on the operation of a processor. It contains well defined and fixed time
-    constraints.</p><br>
-    
-    <p><h4>A monolithic kernel :</h4> It is a kernel which includes all operating system code in a
-    single executable image.</p><br>
-    
-    <p><h4>Micro kernel :</h4> It is the kernel which runs minimal performance
-    affecting services for the operating system. In the microkernel operating system
-    all other operations are performed by the processor.</p>
-    <p><b>Macro Kernel</b> is a combination of micro and monolithic kernel.</p><br>
-    
-    <p><h4>Re-entrancy :</h4> It is a very useful memory saving technique that is used for
-    multi-programmed time sharing systems. It provides functionality that multiple
-    users can share a single copy of a program during the same period. It has two
-    key aspects: <u>The program code cannot modify itself and the local data for each
-    user process must be stored separately.</u></p><br>
-    
-    <p><h4>Demand paging :</h4> It specifies that if an area of memory is not currently being used,
-    it is swapped to disk to make room for an application's need.</p><br>
-    
-    <p><h4>Virtual memory (Imp) :</h4> It is a very useful memory management technique which
-    enables processes to execute outside of memory. This technique is especially
-    used when an executing program cannot fit in the physical memory.</p><br>
-    
-    <p><h4>RAID :</h4> RAID stands for <b>Redundant Array of Independent Disks</b>. It is used to store the
-    same data redundantly to improve the overall performance. There are 7 RAID
-    levels.</p><br>
-    
-    <p><h4>Logical address space :</h4> It specifies the address that is generated by the CPU. On
-    the other hand, physical address space specifies the address that is seen by
-    the memory unit.</p><br>
-     
-    <p><h4>Fragmentation :</h4> Fragmentation is a phenomenon of memory wastage. It reduces the capacity
-    and performance because space is used inefficiently.</p>
-    <ol>
-        <li>
-            <b>Internal fragmentation :</b> It occurs when we deal with the systems that have fixed size allocation units.
-        </li>
-        <li>
-            <b>External fragmentation :</b> It occurs when we deal with systems that have variable-size allocation units.
-        </li>
-    </ol>
-     
-    <br><p><h4>Spooling :</h4> Spooling is a process in which data is temporarily gathered to be used and
-    executed by a device, program or the system. It is associated with printing. When
-    different applications send output to the printer at the same time, spooling keeps
-    these all jobs into a disk file and queues them accordingly to the printer.</p>
-    
-    <br><p><h4>Starvation :</h4> Starvation is Resource management problem. In this problem, a waiting process
-    does not get the resources it needs for a long time because the resources are
-    being allocated to other processes.</p>
-    <br><p><h4>Aging :</h4> Aging is a technique used to avoid starvation in the resource scheduling system.</p>
-    
-    <br><h4>Advantages of multithreaded programming :</h4><br>
-    <ol>
-        <li>
-            Enhance the responsiveness to the users.
-        </li>
-        <li>
-            Resource sharing within the process.
-        </li>
-        <li>
-            Economical 
-        </li>
-        <li>
-            Completely utilize the multiprocessing architecture.
-        </li>
-    </ol>
-    
-    <br><p><h4>Thrashing :</h4> Thrashing is a phenomenon in virtual memory schemes when the processor
-    spends most of its time in swapping pages, rather than executing instructions.</p><br><br>
-    
-    <hr>
-    <p style="font-size: smaller;"> It's last of the page.</p>
+        </ul>
+        
+        <br><h4>Techniques :</h4>
+        <ol style="list-style-type: lower-alpha;">
+            <li><b>Single Partition Allocation Schemes :</b> The memory is divided into two parts. One
+        part is kept to be used by the OS and the other is kept to be used by the users.</li><br>
+            <li><b>Multiple Partition Schemes :</b>
+            <ol>
+                <li><b>Fixed Partition :</b> The memory is divided into fixed size partitions.</li>
+                <li><b>Variable Partition :</b> The memory is divided into variable sized partitions.</li>
+            </ol></li>
+        </ol>
+        
+        <p><b>Note :</b> Variable partition allocation schemes:</p>
+        <ol>
+            <li><b>First Fit :</b> The arriving process is allotted the first hole of memory in which it fits
+        completely.</li>
+            <li><b>Best Fit :</b> The arriving process is allotted the hole of memory in which it fits the best
+        by leaving the minimum memory empty.</li>
+            <li><b>Worst Fit :</b> The arriving process is allotted the hole of memory in which it leaves the
+        maximum gap.</li>
+        </ol>
+        
+        <br><h4>Note :</h4><br>
+        <ul>
+            <li>Best fit does not necessarily give the best results for memory allocation.</li>
+            <li>The cause of external fragmentation is the condition in Fixed partitioning and
+        Variable partitioning saying that the entire process should be allocated in a
+        contiguous memory location.Therefore <b>Paging</b> is used.</li>
+        </ul>
+        
+        <ol>
+            <li><b>Paging :</b> The physical memory is divided into equal sized frames. The main memory
+        is divided into fixed size pages. The size of a physical memory frame is equal to the
+        size of a virtual memory frame.</li>
+            <li><b>Segmentation :</b> Segmentation is implemented to give users a view of memory. The
+        logical address space is a collection of segments. Segmentation can be implemented
+        with or without the use of paging.</li>
+        </ol>
+        
+        <p><b>Page Fault :</b></p>
+        <p>A page fault is a type of interrupt, raised by the hardware when a running program accesses a
+        memory page that is mapped into the virtual address space, but not loaded in physical memory.</p>
 
-</div>
+                                    
+        
+        <br><br id="t17"><h4>Page Replacement Algorithms (Imp) :</h4><br>
+        <ol>
+            <li><h4>First In First Out (FIFO) :</h4><br>
+                <p>This is the simplest page replacement algorithm. In this algorithm, the operating
+        system keeps track of all pages in the memory in a queue, the oldest page is in the
+        front of the queue. When a page needs to be replaced, the page in the front of the
+        queue is selected for removal.</p>
+                <p>For example, consider page reference string 1, 3, 0, 3, 5, 6 and 3 page slots. Initially,
+        all slots are empty, so when 1, 3, 0 come they are allocated to the empty slots —> 3
+        Page Faults. When 3 comes, it is already in memory so —> 0 Page Faults. Then 5
+        comes, it is not available in memory so it replaces the oldest page slot i.e 1. —> 1
+        Page Fault. Finally, 6 comes, it is also not available in memory so it replaces the
+        oldest page slot i.e 3 —> 1 Page Fault.</p>
+
+                <p><b>Belady's anomaly :</b>
+        Belady's anomaly proves that it is possible to have more page faults when increasing
+        the number of page frames while using the First in First Out (FIFO) page
+        replacement algorithm. For example, if we consider reference string ( 3 2 1 0
+        3 2 4 3 2 1 0 4 ) and 3 slots, we get 9 total page faults, but if we
+        increase slots to 4, we get 10 page faults.</p></li><br>
+        
+            <li><h4>Optimal Page replacement :</h4><br>
+                <p>In this algorithm, pages are replaced which are not used for the longest duration of
+        time in the future.</p>
+                <p>Let us consider page reference string 7 0 1 2 0 3 0 4 2 3 0 3 2 and 4 page slots.
+        Initially, all slots are empty, so when 7 0 1 2 are allocated to the empty slots —> 4
+        Page faults. 0 is already there so —> 0 Page fault. When 3 came it will take the
+        place of 7 because it is not used for the longest duration of time in the future.—> 1
+        Page fault. 0 is already there so —> 0 Page fault. 4 will takes place of 1 —> 1 Page
+        Fault. Now for the further page reference string —> 0 Page fault because they are
+        already available in the memory.</p>
+                <p>Optimal page replacement is perfect, but not possible in practice as an operating
+        system cannot know future requests. The use of Optimal Page replacement is to set
+        up a benchmark so that other replacement algorithms can be analyzed against it.</p></li><br>
+        
+            <li><h4>Least Recently Used (LRU) :</h4><br>
+                <p>In this algorithm, the page will be replaced with the one which is least recently used.
+        Let say the page reference string 7 0 1 2 0 3 0 4 2 3 0 3 2 . Initially, we had 4-page
+        slots empty. Initially, all slots are empty, so when 7 0 1 2 are allocated to the empty
+        slots —> 4 Page faults. 0 is already there so —> 0 Page fault. When 3 comes it will
+        take the place of 7 because it is least recently used —> 1 Page fault. 0 is already in
+        memory so —> 0 Page fault. 4 will take place of 1 —> 1 Page Fault. Now for the
+        further page reference string —> <b>0 Page fault</b> because they are already available in
+        the memory.</p></li>
+        </ol>
+        
+        
+        <br><br id="t18"><h4>Disk Scheduling :</h4> Disk scheduling is done by operating systems to schedule I/O
+        requests arriving for disk. Disk scheduling is also known as I/O scheduling.</br>
+        <ol>
+            <li><b>Seek Time :</b> Seek time is the time taken to locate the disk arm to a specified track
+        where the data is to be read or written.</li><br>
+            <li><b>Rotational Latency :</b> Rotational Latency is the time taken by the desired sector of
+        disk to rotate into a position so that it can access the read/write heads.</li><br>
+            <li><b>Transfer Time :</b> Transfer time is the time to transfer the data. It depends on the
+        rotating speed of the disk and number of bytes to be transferred.</li><br>
+            <li><b>Disk Access Time :</b> Seek Time + Rotational Latency + Transfer Time</li><br>
+            <li><b>Disk Response Time :</b> Response Time is the average of time spent by a request
+        waiting to perform its I/O operation. Average Response time is the response time of
+        all requests.</li><br>
+        </ol>
+        
+        
+        
+        <br id="t19"><h4>Disk Scheduling Algorithms (Imp) :</h4><br>
+        <ol>
+            <li><b>FCFS :</b> FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the
+        requests are addressed in the order they arrive in the disk queue.</li><br>
+        
+            <li><b>SSTF :</b> In SSTF (Shortest Seek Time First), requests having the shortest seek time
+        are executed first. So, the seek time of every request is calculated in advance in a
+        queue and then they are scheduled according to their calculated seek time. As a
+        result, the request near the disk arm will get executed first.</li><br>
+        
+            <li><b>SCAN :</b> In SCAN algorithm the disk arm moves into a particular direction and
+        services the requests coming in its path and after reaching the end of the disk, it
+        reverses its direction and again services the request arriving in its path. So, <u>this
+        algorithm works like an elevator and hence is also known as elevator algorithm</u>.</li><br>
+        
+            <li><b>CSCAN :</b> In SCAN algorithm, the disk arm again scans the path that has been
+        scanned, after reversing its direction. So, it may be possible that too many requests
+        are waiting at the other end or there may be zero or few requests pending at the
+        scanned area</li><br>
+            <li><b>LOOK :</b> It is similar to the SCAN disk scheduling algorithm except for the difference
+        that the disk arm in spite of going to the end of the disk goes only to the last request
+        to be serviced in front of the head and then reverses its direction from there only.
+        Thus it prevents the extra delay which occurred due to unnecessary traversal to the
+        end of the disk.</li><br>
+            <li><b>CLOOK :</b> As LOOK is similar to SCAN algorithm, CLOOK is similar to CSCAN disk
+        scheduling algorithm. In CLOOK, the disk arm in spite of going to the end goes only
+        to the last request to be serviced in front of the head and then from there goes to the
+        other end's last request. Thus, it also prevents the extra delay which occurred due to
+        unnecessary traversal to the end of the disk.</li><br>
+        </ol>
+                        
+        <br><hr><br id="t20">                        
+        
+        <h3>Key Terms</h3><br>
+        
+        <p><h4>Real-time system :</h4> It is used in the case when rigid-time requirements have been
+        placed on the operation of a processor. It contains well defined and fixed time
+        constraints.</p><br>
+        
+        <p><h4>A monolithic kernel :</h4> It is a kernel which includes all operating system code in a
+        single executable image.</p><br>
+        
+        <p><h4>Micro kernel :</h4> It is the kernel which runs minimal performance
+        affecting services for the operating system. In the microkernel operating system
+        all other operations are performed by the processor.</p>
+        <p><b>Macro Kernel</b> is a combination of micro and monolithic kernel.</p><br>
+        
+        <p><h4>Re-entrancy :</h4> It is a very useful memory saving technique that is used for
+        multi-programmed time sharing systems. It provides functionality that multiple
+        users can share a single copy of a program during the same period. It has two
+        key aspects: <u>The program code cannot modify itself and the local data for each
+        user process must be stored separately.</u></p><br>
+        
+        <p><h4>Demand paging :</h4> It specifies that if an area of memory is not currently being used,
+        it is swapped to disk to make room for an application's need.</p><br>
+        
+        <p><h4>Virtual memory (Imp) :</h4> It is a very useful memory management technique which
+        enables processes to execute outside of memory. This technique is especially
+        used when an executing program cannot fit in the physical memory.</p><br>
+        
+        <p><h4>RAID :</h4> RAID stands for <b>Redundant Array of Independent Disks</b>. It is used to store the
+        same data redundantly to improve the overall performance. There are 7 RAID
+        levels.</p><br>
+        
+        <p><h4>Logical address space :</h4> It specifies the address that is generated by the CPU. On
+        the other hand, physical address space specifies the address that is seen by
+        the memory unit.</p><br>
+        
+        <p><h4>Fragmentation :</h4> Fragmentation is a phenomenon of memory wastage. It reduces the capacity
+        and performance because space is used inefficiently.</p>
+        <ol>
+            <li>
+                <b>Internal fragmentation :</b> It occurs when we deal with the systems that have fixed size allocation units.
+            </li>
+            <li>
+                <b>External fragmentation :</b> It occurs when we deal with systems that have variable-size allocation units.
+            </li>
+        </ol>
+        
+        <br><p><h4>Spooling :</h4> Spooling is a process in which data is temporarily gathered to be used and
+        executed by a device, program or the system. It is associated with printing. When
+        different applications send output to the printer at the same time, spooling keeps
+        these all jobs into a disk file and queues them accordingly to the printer.</p>
+        
+        <br><p><h4>Starvation :</h4> Starvation is Resource management problem. In this problem, a waiting process
+        does not get the resources it needs for a long time because the resources are
+        being allocated to other processes.</p>
+        <br><p><h4>Aging :</h4> Aging is a technique used to avoid starvation in the resource scheduling system.</p>
+        
+        <br><h4>Advantages of multithreaded programming :</h4><br>
+        <ol>
+            <li>
+                Enhance the responsiveness to the users.
+            </li>
+            <li>
+                Resource sharing within the process.
+            </li>
+            <li>
+                Economical 
+            </li>
+            <li>
+                Completely utilize the multiprocessing architecture.
+            </li>
+        </ol>
+        
+        <br><p><h4>Thrashing :</h4> Thrashing is a phenomenon in virtual memory schemes when the processor
+        spends most of its time in swapping pages, rather than executing instructions.</p><br><br>
+        
+        <hr>
+        <p style="font-size: smaller;"> It's last of the page.</p>
+
+    </div>
 
 
 
@@ -1038,9 +1038,8 @@
 
 
 
-<div id="computerNetworks">
+    <div id="computerNetworks">
 
- 
         <br><h1>Computer Networks</h1><br id="t1">
         <p><h4>Network :</h4> A network is a set of devices that are connected with a physical media link. In
         a network, two or more nodes are connected by a physical link or two or more networks
@@ -1083,494 +1082,494 @@
         <br>
         <ol>
             <li>Bus topology is a network topology in which all the nodes are connected to a
-single cable known as a central cable or bus.</li>
+        single cable known as a central cable or bus.</li>
             <li>It acts as a shared communication medium, i.e., if any device wants to send the
-data to other devices, then it will send the data over the bus which in turn sends
-the data to all the attached devices.</li>
+        data to other devices, then it will send the data over the bus which in turn sends
+        the data to all the attached devices.</li>
             <li>Bus topology is useful for a small number of devices.</li>
             <li>As if the bus is damaged then the whole network fails.</li>
         </ol>
         <br><br>
         <h4>Mesh :</h4><br>
 
-<ol>
-    <li>Mesh topology is a network topology in which all the nodes are individually
-connected to other nodes.</li>
-    <li>It does not need any central switch or hub to control the connectivity among the
-nodes.</li>
-    <li>Mesh topology is categorized into two parts: Fully connected mesh topology:
-In this topology, all the nodes are connected to each other. Partially connected
-mesh topology: In this topology, all the nodes are not connected to each other.</li>
-    <li>It is robust as a failure in one cable will only disconnect the specified computer
-connected to this cable.</li>
-    <li>Mesh topology is rarely used as installation and configuration are difficult when
-connectivity gets more.</li>
-    <li>Cabling cost is high as it requires bulk wiring.</li>
-</ol>
- 
-
-<br><br>
-<h4>Tree :</h4><br> 
-
-<ol>
-    <li>Tree topology is a combination of star and bus topology. It is also known as the
-expanded star topology.</li>
-    <li>In tree topology, all the star networks are connected to a single bus.</li>
-    <li>Ethernet protocol is used in this topology.</li>
-    <li>In this, the whole network is divided into segments known as star networks which
-can be easily maintained. If one segment is damaged, there is no effect on other
-segments.</li>
-    <li>Tree topology depends on the "main bus," and if it breaks, then the whole
-network gets damaged.</li>
-</ol>
-<br><br>
-<h4>Hybrid :</h4><br> 
-
-<ol>
-    <li>A hybrid topology is a combination of different topologies to form a resulting
-topology.</li>
-    <li>If star topology is connected with another star topology, then it remains a star
-topology. If star topology is connected with different topology, then it becomes a
-Hybrid topology.</li>
-    <li>It provides flexibility as it can be implemented in a different network environment.</li>
-</ol>
-
-<br><br id="t3"><h4>Different Types of Networks (Imp) :</h4> Networks can be divided on the basis of area of
-distribution. For example:
-<br>
-
-<ul>
-    <li><h4>PAN (Personal Area Network) :</h4> Its range limit is up to 10 meters. It is created for
-personal use. Generally, personal devices are connected to this network. For example
-computers, telephones, fax, printers, etc.</li><br>
-    <li><h4>LAN (Local Area Network) :</h4> It is used for a small geographical location like office,
-hospital, school, etc.</li><br>
-    <li><h4>HAN (House Area Network) :</h4> It is actually a LAN that is used within a house and used to
-connect homely devices like personal computers, phones, printers, etc.</li><br>
-    <li><h4>CAN (Campus Area Network) :</h4> It is a connection of devices within a campus area which
-links to other departments of the organization within the same campus.</li><br>
-    <li><h4>MAN (Metropolitan Area Network) :</h4> It is used to connect the devices which span to
-large cities like metropolitan cities over a wide geographical area.</li><br>
-    <li><h4>WAN (Wide Area Network) :</h4> It is used over a wide geographical location that may range
-to connect cities and countries.</li><br>
-    <li><h4>GAN (Global Area Network) :</h4> It uses satellites to connect devices over the global area.</li><br id="t4">
-    <li><h4>VPN (Virtual Private Network) :</h4> VPN or the Virtual Private Network is a private WAN
-(Wide Area Network) built on the internet. It allows the creation of a secured tunnel
-(protected network) between different networks using the internet (public network). By
-using the VPN, a client can connect to the organization's network remotely.</li>
-</ul>
-
-<br><h4>Advantages of VPN :</h4><br>
-<ol>
-    <li>VPN is used to connect offices in different geographical locations remotely and is
-cheaper when compared to WAN connections.</li><br>
-    <li>VPN is used for secure transactions and confidential data transfer between
-multiple offices located in different geographical locations.</li><br>
-    <li>VPN keeps an organization's information secured against any potential threats or
-intrusions by using virtualization.</li><br>
-    <li>VPN encrypts the internet traffic and disguises the online identity.</li><br>
-</ol>
-
-<br><h4>Types of VPN :</h4><br>
-<ul>
-    <li><b>Access VPN :</b> Access VPN is used to provide connectivity to remote mobile users and
-telecommuters. It serves as an alternative to dial-up connections or ISDN (Integrated
-Services Digital Network) connections. It is a low-cost solution and provides a wide
-range of connectivity.</li><br>
-    <li><b>Site-to-Site VPN :</b> A Site-to-Site or Router-to-Router VPN is commonly used in large
-companies having branches in different locations to connect the network of one office to
-another in different locations. There are 2 sub-categories as mentioned below:</li><br>
-    <li><b>Intranet VPN :</b> Intranet VPN is useful for connecting remote offices in different
-geographical locations using shared infrastructure (internet connectivity and servers)
-with the same accessibility policies as a private WAN (wide area network).</li><br>
-    <li><b>Extranet VPN :</b> Extranet VPN uses shared infrastructure over an intranet, suppliers,
-customers, partners, and other entities and connects them using dedicated connections.</li><br>
-    <li><b>IPv4 Address :</b> An IP address is a 32-bit dynamic address of a node in the network. An
-IPv4 address has 4 octets of 8-bit each with each number with a value up to 255. IPv4
-classes are differentiated based on the number of hosts it supports on the network.
-There are five types of IPv4 classes and are based on the first octet of IP addresses
-which are classified as Class A, B, C, D, or E.</li><br>
-</ul>
-      
-
-<br><br id="t5"><p><h4>OSI (Open System Interconnections) (Imp) :</h4> It is a network architecture model based
-on the ISO standards. It is called the OSI model as it deals with connecting the systems
-that are open for communication with other systems. <b><u>The OSI model has seven layers.</u></b>
-The principles used to arrive at the seven layers can be summarized briefly as below:</p>
-
-<ol>
-    <li>Create a new layer if a different abstraction is needed.</li>
-    <li>Each layer should have a well-defined function.</li>
-    <li>The function of each layer is chosen based on internationally standardized
-protocols.</li>
-</ol>
-
-
-    <h4>1. Physical Layer :</h4>
-    <ul>
-        <li>It is the lowest layer of the OSI reference model.</li>
-        <li>It is used for the transmission of an unstructured raw bit stream over a physical
-medium.</li>
-        <li>Physical layer transmits the data either in the form of electrical/optical or
-mechanical form.</li>
-        <li>The physical layer is mainly used for the physical connection between the
-devices, and such physical connection can be made by using twisted-pair cable,
-fibre-optic or wireless transmission media.</li>
-    </ul>
-    <br><h4>2. DataLink Layer :</h4><br>
-    <ul>
-        <li>It is used for transferring the data from one node to another node.</li>
-        <li>It receives the data from the network layer and converts the data into data frames
-and then attaches the physical address to these frames which are sent to the
-physical layer.</li>
-        <li>It enables the error-free transfer of data from one node to another node.</li>
-    </ul>
-
-    <h4>Functions of Data-link layer :</h4><br>
-    <ul>
-        <li><b>Frame synchronization :</b> Data-link layer converts the data into frames, and it ensures
-that the destination must recognize the starting and ending of each frame.</li>
-        <li><b>Flow control :</b> Data-link layer controls the data flow within the network.</li>
-        <li><b>Error control :</b> It detects and corrects the error occurred during the transmission from
-source to destination.</li>
-        <li><b>Addressing :</b> Data-link layers attach the physical address with the data frames so that
-the individual machines can be easily identified.</li>
-        <li><b>Link management :</b> Data-link layer manages the initiation, maintenance and termination
-of the link between the source and destination for the effective exchange of data.</li>
-    </ul>
- 
- <br><h4>3. Network Layer :</h4><br>
- <ul>
-    <li>Network layer converts the logical address into the physical address.</li>
-    <li>The routing concept means it determines the best route for the packet to travel from
-source to the destination.</li>
-    
- </ul>
-
-<h4>Functions of network layer :</h4><br>
-<ul>
-    <li><b>Routing :</b> The network layer determines the best route from source to destination. This
-function is known as routing.</li>
-    <li><b>Logical addressing :</b> The network layer defines the addressing scheme to identify each
-device uniquely.</li>
-    <li><b>Packetizing :</b> The network layer receives the data from the upper layer and converts the
-data into packets. This process is known as packetizing.</li>
-    <li><b>Internetworking :</b> The network layer provides the logical connection between the
-different types of networks for forming a bigger network.</li>
-    <li><b>Fragmentation :</b> It is a process of dividing the packets into fragments.</li>
-</ul>
-
-<br><h4>4. Transport Layer :</h4><br>
-<ul>
-    <li>It delivers the message through the network and provides error checking so that no error
-occurs during the transfer of data.</li>
-    <li>It provides two kinds of services :
         <ol>
-            <li><b>Connection-oriented transmission :</b> In this transmission, the receiver sends the
-acknowledgement to the sender after the packet has been received.</li>
-            <li><b>Connectionless transmission :</b> In this transmission, the receiver does not send
-the acknowledgement to the sender.</li>
+            <li>Mesh topology is a network topology in which all the nodes are individually
+        connected to other nodes.</li>
+            <li>It does not need any central switch or hub to control the connectivity among the
+        nodes.</li>
+            <li>Mesh topology is categorized into two parts: Fully connected mesh topology:
+        In this topology, all the nodes are connected to each other. Partially connected
+        mesh topology: In this topology, all the nodes are not connected to each other.</li>
+            <li>It is robust as a failure in one cable will only disconnect the specified computer
+        connected to this cable.</li>
+            <li>Mesh topology is rarely used as installation and configuration are difficult when
+        connectivity gets more.</li>
+            <li>Cabling cost is high as it requires bulk wiring.</li>
         </ol>
-    </li>
-</ul>
-
-
-<br><h4>5. Session Layer :</h4><br>
-<ul>
-    <li>The main responsibility of the session layer is beginning, maintaining and ending the
-communication between the devices.</li>
-    <li>Session layer also reports the error coming from the upper layers.</li>
-    <li>Session layer establishes and maintains the session between the two users.</li>
-</ul>
-
-<br><h4>6. Presentation Layer :</h4><br>
-<ul>
-    <li>The presentation layer is also known as a Translation layer as it translates the data from
-one format to another format.</li>
-    <li>At the sender side, this layer translates the data format used by the application layer to
-the common format and at the receiver side, this layer translates the common format into
-a format used by the application layer.</li>
-</ul>
-
-<h4>Functions of presentation layer :</h4>
-<ul>
-    <li>Character code translation</li>
-    <li>Data conversion</li>
-    <li>Data compression</li>
-    <li>Data encryption</li>
-</ul>
-
-<br><h4>7. Application Layer :</h4><br>
-<ul>
-    <li>Application layer enables the user to access the network.</li>
-    <li>It is the topmost layer of the OSI reference model.</li>
-    <li>Application layer protocols are file transfer protocol, simple mail transfer protocol,
-domain name system, etc.</li>
-    <li>The most widely used application protocol is HTTP(Hypertext transfer protocol ). A user
-sends the request for the web page using HTTP.</li>
-</ul>
-
-<br><p><h4>TCP/IP Reference Model :</h4>
-<u>It is a compressed version of the OSI model with only <b>4 layers.</b></u> It was developed by the US Department of Defence (DoD) in the 1860s. The
-name of this model is based on 2 standard protocols used i.e. TCP (Transmission
-Control Protocol) and IP (Internet Protocol).</p>
-
-<ol>
-    <li><b>Link :</b> Decides which links such as serial lines or classic Ethernet must be used
-to meet the needs of the connectionless internet layer. Ex - Sonet, Ethernet</li>
-    <li><b>Internet :</b> The internet layer is the most important layer which holds the whole
-architecture together. It delivers the IP packets where they are supposed to be
-delivered. Ex - IP, ICMP.</li>
-    <li><b>Transport :</b> Its functionality is almost the same as the OSI transport layer. It
-enables peer entities on the network to carry on a conversation. Ex - TCP, UDP
-(User Datagram Protocol)</li>
-    <li><b>Application :</b> It contains all the higher-level protocols. Ex - HTTP, SMTP, RTP,
-DNS.</li>
-</ol>
-
-<br><h4>HTTP and HTTPS :</h4>
-<p><b>HTTP is the <u>HyperText Transfer Protocol</u></b> which defines the set of rules and standards
-on how the information can be transmitted on the World Wide Web (WWW). It helps the
-web browsers and web servers for communication. It is a 'stateless protocol' where each
-command is independent with respect to the previous command. <u>HTTP is an
-application layer protocol built upon the TCP. It uses port 80 by default.</u></p>
-
-<p><b>HTTPS is the HyperText Transfer Protocol Secure or <u>Secure HTTP.</u></b> It is an advanced
-and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide
-security. <u>It enables secure transactions by encrypting the communication and also
-helps identify network servers securely. It uses port 443 by default.</u></p>
-
-<br id="t6"><h4>DNS (Imp) :</h4>
-<ol>
-    <li>DNS is an acronym that stands for <u>Domain Name System</u>. DNS was introduced
-by Paul Mockapetris and Jon Postel in 1983.</li>
-    <li>It is a naming system for all the resources over the internet which includes
-physical nodes and applications. It is used to locate resources easily over a
-network.</li>
-    <li>DNS is an internet which maps the domain names to their associated <u>IP addresses</u>.</li>
-    <li>Without DNS, users must know the IP address of the web page that you wanted
-to access.</li>
-</ol>
- 
-<br><p><h4>Working of DNS (Imp) :</h4> If you want to visit the website "example", then the user will
-type "<a href="https://www.example.com"><u>https://www.example.com</u></a>" into the address bar of the web browser. Once the
-domain name is entered, then the domain name system will translate the domain name
-into the IP address which can be easily interpreted by the computer. Using the IP
-address, the computer can locate the web page requested by the user.</p>
-
-<br><p><h4>DNS Forwarder :</h4> A forwarder is used with a DNS server when it receives DNS queries
-that cannot be resolved quickly. So it forwards those requests to external DNS servers
-for resolution. A DNS server which is configured as a forwarder will behave differently
-than the DNS server which is not configured as a forwarder.</p>
-  
-<br><p><h4>SMTP Protocol :</h4> SMTP is the <b>Simple Mail Transfer Protocol</b>. SMTP sets the rule for
-communication between servers. This set of rules helps the software to transmit emails
-over the internet. It supports both End-to-End and Store-and-Forward methods. <u>It is in
-always-listening mode on port 25</u>.</p>
-
-<br><br id="t7"><p><h4>Difference Between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) :</h4></p>
-<ol>
-    <li><b>TCP</b> is a connection-oriented protocol, whereas <b>UDP</b> is a connectionless
-protocol. A key <b>difference between TCP and UDP</b> is speed, as <b>TCP</b> is
-comparatively slower than <b>UDP</b>. Overall, <b>UDP</b> is a much faster, simpler, and
-efficient protocol, however, retransmission of lost data packets is only possible
-with <b>TCP</b></li><br>
-    <li>TCP provides extensive error checking mechanisms. It is because it provides
-flow control and acknowledgment of data. UDP has only the basic error
-checking mechanism using checksums.</li>
-</ol>
- 
-<br><br><hr><br id="t8">
-  
-<h3>Important Protocols</h3>
-<p>A protocol is a set of rules which is used to govern all the aspects of information
-communication.The main elements of a protocol are :</p>
-<ul>
-    <li><b>Syntax :</b> It specifies the structure or format of the data. It also specifies the order in which
-they are presented.</li>
-    <li><b>Semantics :</b> It specifies the meaning of each section of bits.</li>
-    <li><b>Timing :</b> Timing specifies two characteristics: When data should be sent and how fast it
-can be sent.</li>
-</ul>
-
-<br><p><h4>DHCP :</h4> DHCP is the <b>Dynamic Host Configuration Protocol</b>. It is an application layer
-protocol used to auto-configure devices on IP networks enabling them to use the TCP
-and UDP-based protocols. The DHCP servers auto-assign the IPs and other network
-configurations to the devices individually which enables them to communicate over the
-IP network. It helps to get the subnet mask, IP address and helps to resolve the DNS.
-<u> It uses port 67 by default</u>.</p>
-
-<br><p><h4>FTP :</h4> FTP is a <b>File Transfer Protocol</b>. It is an application layer protocol used to transfer
-files and data reliably and efficiently between hosts. It can also be used to download files
-from remote servers to your computer. <u>It uses port 27 by default</u>.</p>
-
-<br><p><h4>ICMP :</h4> ICMP is the <b>Internet Control Message Protocol</b>. It is a network layer protocol
-used for error handling. It is mainly used by network devices like routers for diagnosing
-the network connection issues and crucial for error reporting and testing if the data is
-reaching the preferred destination in time. <u>It uses port 7 by default</u>.</p>
-
-<br><p><h4>ARP :</h4> ARP is <b>Address Resolution Protocol</b>. It is a network-level protocol used to
-convert the logical address i.e. IP address to the device's physical address i.e. MAC
-address. It can also be used to get the MAC address of devices when they are trying to
-communicate over the local network.</p>
-
-<br><p><h4>RIP :</h4> RIP stands for <b>Routing Information Protocol</b>. It is accessed by the routers to send
-data from one network to another. RIP is a dynamic protocol which is used to find the
-best route from source to the destination over a network by using the hop count
-algorithm. Routers use this protocol to exchange the network topology information. This
-protocol can be used by small or medium-sized networks.</p>
-
-<br><br id="t9"><h4>MAC address and IP address (Imp) :</h4>
-<ol>
-    <li>Both MAC (Media Access Control) Address and IP Address are used to <b>uniquely
-define a device on the internet.</b> NIC Card's Manufacturer provides the MAC Address,
-on the other hand Internet Service Provider provides IP Address.</li><br>
-    <li><b>The main difference between MAC and IP address</b> is that MAC Address is used to
-ensure the physical address of a computer. It uniquely identifies the devices on a
-network. While IP addresses are used to uniquely identify the connection of a network
-with that device taking part in a network.</li>
-</ol>
- 
-<br><br><h4>Ipconfig and Ifconfig :</h4>
-<ol>
-    <li><b>Ipconfig :</b> Internet Protocol Configuration, It is a command used in Microsoft operating
-systems to view and configure network interfaces</li><br>
-    <li><b>Ifconfig :</b> Interface Configuration, It is a command used in MAC, Linux, UNIX operating
-systems to view and configure network interfaces</li>
-</ol>
- 
-<br><br><p><h4>Firewall :</h4> The firewall is a network security system that is used to monitor the incoming
-and outgoing traffic and blocks the same based on the firewall security policies. It acts as
-a wall between the internet (public network) and the networking devices (a private
-network). It is either a hardware device, software program, or a combination of both. It
-adds a layer of security to the network.</p>
-
-<br><br><hr><br id="t10">
-
-<h3>Important Key Points</h3><br>
-
-    <ol>
-
-        <li><p><h4>What happens when you enter google.com in the web browser? (Most Imp)</h4><br>
-<p><b>Steps :</b></p>
-<ul style="list-style-type:disc;">
-    <li>Check the browser cache first if the content is fresh and present in the cache display the
-same.</li>
-    <li>If not, the browser checks if the IP of the URL is present in the cache (browser and OS)
-if not then requests the OS to do a DNS lookup using UDP to get the corresponding IP
-address of the URL from the DNS server to establish a new TCP connection.</li>
-    <li>A new TCP connection is set between the browser and the server using three-way
-handshaking.</li>
-    <li>An HTTP request is sent to the server using the TCP connection.</li>
-    <li>The web servers running on the Servers handle the incoming HTTP request and send
-the HTTP response.</li>
-    <li>The browser processes the HTTP response sent by the server and may close the TCP
-connection or reuse the same for future requests.</li>
-    <li>If the response data is cacheable then browsers cache the same.</li>
-    <li>Browser decodes the response and renders the content.</li>
-</ul>
-</p></li><br>
-
-
-        <li><p><h4>Hub :</h4> Hub is a networking device which is used to transmit the signal to each port
-(except one port) to respond from which the signal was received. Hub is operated on a
-Physical layer. In this packet filtering is not available. It is of two types: Active Hub,
-Passive Hub.</p>
-<p><h4>Switch :</h4> Switch is a network device which is used to enable the connection
-establishment and connection termination on the basis of need. Switch is operated on
-the Data link layer. In this packet filtering is available. It is a type of full duplex
-transmission mode and it is also called an efficient bridge.</p></li><br>
-
-
-        <li><p><h4>Subnet :</h4> A subnet is a network inside a network achieved by the process called subnetting which
-helps divide a network into subnets. It is used for getting a higher routing efficiency and
-enhances the security of the network. It reduces the time to extract the host address
-from the routing table.</p></li><br>
-
-
-        <li><p><h4><u>The reliability of a network</u> can be measured by the following factors :</h4>
-<ul style="list-style-type:disc;">
-    <li><b>Downtime :</b> The downtime is defined as the required time to recover.</li>
-    <li><b>Failure Frequency :</b> It is the frequency when it fails to work the way it is intended.</li>
-    <li><b>Catastrophe :</b> It indicates that the network has been attacked by some unexpected event
-    such as fire, earthquake.</li>
-</ul>
-</p></li><br>
-
-
-        <li><p><h4>There are mainly two criteria which make a <u>network effective and efficient :</u></h4>
-<ul style="list-style-type:disc;">
-    <li><b>Performance :</b> performance can be measured in many ways like transmit time and
-response time.</li>
-    <li><b>Reliability :</b> reliability is measured by frequency of failure.</li>
-    <li><b>Robustness :</b> robustness specifies the quality or condition of being strong and in good
-condition.</li>
-    <li><b>Security :</b> It specifies how to protect data from unauthorized access and viruses.</li>
-</ul>
-</p></li><br>
-
-
-        <li><p><h4>Node and Link :</h4> A network is a connection setup of two or more computers directly
-connected by some physical mediums like optical fiber or coaxial cable. This physical
-medium of connection is known as a link, and the computers that it is connected to are
-known as nodes.</p></li><br>
-
-
-        <li><p><h4>Gateway and router :</h4> A node that is connected to two or more networks is commonly
-known as a gateway. It is also known as a router. It is used to forward messages from
-one network to another. <b>Both the gateway and router regulate the traffic in the
-network. Differences between gateway and router:</b> A router sends the data between
-two similar networks while gateway sends the data between two dissimilar networks.</p></li><br>
-
-
-        <li><p><h4>NIC (Imp) :</h4> NIC stands for <b>Network Interface Card</b>. It is a peripheral card attached to
-the PC to connect to a network. Every NIC has its own MAC address that identifies the
-PC on the network. It provides a wireless connection to a local area network. NICs were
-mainly used in desktop computers.</p></li><br>
-
-
-        <li><p><h4>POP3 :</h4> POP3 stands for <b>Post Office Protocol version3</b>. POP is responsible for accessing the
-mail service on a client machine. POP3 works on two models such as Delete mode and
-Keep mode.</p></li><br>
-
-
-        <li><p><h4>Private IP Address :</h4> There are three ranges of IP addresses that have been reserved
-for IP addresses. They are not valid for use on the internet. If you want to access the
-internet on these private IPs, you must use a proxy server or NAT server.
-</p>
-<p><h4>Public IP Address :</h4> A public IP address is an address taken by the Internet Service
-Provider which facilitates communication on the internet.</p></li><br>
-
-
-        <li><p><h4>RAID ( Redundant Array of Inexpensive/Independent Disks) :</h4> It is a method to provide
-Fault Tolerance by using multiple Hard Disc Drives.</p></li><br>
-
-
-        <li><p><h4>Netstat :</h4> It is a command line utility program. It gives useful information about the
-current TCP/IP setting of a connection.</p></li><br>
-
-
-        <li><p><h4>Ping :</h4> The "ping" is a utility program that allows you to check the connectivity between
-the network devices. You can ping devices using its IP address or name.</p></li><br>
-
-
-        <li><p><h4>P2P(peer-peer processes) :</h4> The processes on each machine that communicate at a given layer are called
-peer-peer processes.</p></li><br>
         
 
-        <li><p><h4>Unicasting :</h4> If the message is sent to a single node from the source then it is known as
-unicasting. This is commonly used in networks to establish a new connection.</p></li>
+        <br><br>
+        <h4>Tree :</h4><br> 
 
-<p><h4>Anycasting :</h4> If the message is sent to any of the nodes from the source then it is known
-as anycasting. It is mainly used to get the content from any of the servers in the Content
-Delivery System.</p>
+        <ol>
+            <li>Tree topology is a combination of star and bus topology. It is also known as the
+        expanded star topology.</li>
+            <li>In tree topology, all the star networks are connected to a single bus.</li>
+            <li>Ethernet protocol is used in this topology.</li>
+            <li>In this, the whole network is divided into segments known as star networks which
+        can be easily maintained. If one segment is damaged, there is no effect on other
+        segments.</li>
+            <li>Tree topology depends on the "main bus," and if it breaks, then the whole
+        network gets damaged.</li>
+        </ol>
+        <br><br>
+        <h4>Hybrid :</h4><br> 
 
-<p><h4>Multicasting :</h4> If the message is sent to a subset of nodes from the source then it is
-known as multicasting. Used to send the same data to multiple receivers.</p>
+        <ol>
+            <li>A hybrid topology is a combination of different topologies to form a resulting
+        topology.</li>
+            <li>If star topology is connected with another star topology, then it remains a star
+        topology. If star topology is connected with different topology, then it becomes a
+        Hybrid topology.</li>
+            <li>It provides flexibility as it can be implemented in a different network environment.</li>
+        </ol>
 
-<p><h4>Broadcasting :</h4> If the message is sent to all the nodes in a network from a source then it
-is known as broadcasting. DHCP and ARP in the local network use broadcasting.</p><br>
+        <br><br id="t3"><h4>Different Types of Networks (Imp) :</h4> Networks can be divided on the basis of area of
+        distribution. For example:
+        <br>
+
+        <ul>
+            <li><h4>PAN (Personal Area Network) :</h4> Its range limit is up to 10 meters. It is created for
+        personal use. Generally, personal devices are connected to this network. For example
+        computers, telephones, fax, printers, etc.</li><br>
+            <li><h4>LAN (Local Area Network) :</h4> It is used for a small geographical location like office,
+        hospital, school, etc.</li><br>
+            <li><h4>HAN (House Area Network) :</h4> It is actually a LAN that is used within a house and used to
+        connect homely devices like personal computers, phones, printers, etc.</li><br>
+            <li><h4>CAN (Campus Area Network) :</h4> It is a connection of devices within a campus area which
+        links to other departments of the organization within the same campus.</li><br>
+            <li><h4>MAN (Metropolitan Area Network) :</h4> It is used to connect the devices which span to
+        large cities like metropolitan cities over a wide geographical area.</li><br>
+            <li><h4>WAN (Wide Area Network) :</h4> It is used over a wide geographical location that may range
+        to connect cities and countries.</li><br>
+            <li><h4>GAN (Global Area Network) :</h4> It uses satellites to connect devices over the global area.</li><br id="t4">
+            <li><h4>VPN (Virtual Private Network) :</h4> VPN or the Virtual Private Network is a private WAN
+        (Wide Area Network) built on the internet. It allows the creation of a secured tunnel
+        (protected network) between different networks using the internet (public network). By
+        using the VPN, a client can connect to the organization's network remotely.</li>
+        </ul>
+
+        <br><h4>Advantages of VPN :</h4><br>
+        <ol>
+            <li>VPN is used to connect offices in different geographical locations remotely and is
+        cheaper when compared to WAN connections.</li><br>
+            <li>VPN is used for secure transactions and confidential data transfer between
+        multiple offices located in different geographical locations.</li><br>
+            <li>VPN keeps an organization's information secured against any potential threats or
+        intrusions by using virtualization.</li><br>
+            <li>VPN encrypts the internet traffic and disguises the online identity.</li><br>
+        </ol>
+
+        <br><h4>Types of VPN :</h4><br>
+        <ul>
+            <li><b>Access VPN :</b> Access VPN is used to provide connectivity to remote mobile users and
+        telecommuters. It serves as an alternative to dial-up connections or ISDN (Integrated
+        Services Digital Network) connections. It is a low-cost solution and provides a wide
+        range of connectivity.</li><br>
+            <li><b>Site-to-Site VPN :</b> A Site-to-Site or Router-to-Router VPN is commonly used in large
+        companies having branches in different locations to connect the network of one office to
+        another in different locations. There are 2 sub-categories as mentioned below:</li><br>
+            <li><b>Intranet VPN :</b> Intranet VPN is useful for connecting remote offices in different
+        geographical locations using shared infrastructure (internet connectivity and servers)
+        with the same accessibility policies as a private WAN (wide area network).</li><br>
+            <li><b>Extranet VPN :</b> Extranet VPN uses shared infrastructure over an intranet, suppliers,
+        customers, partners, and other entities and connects them using dedicated connections.</li><br>
+            <li><b>IPv4 Address :</b> An IP address is a 32-bit dynamic address of a node in the network. An
+        IPv4 address has 4 octets of 8-bit each with each number with a value up to 255. IPv4
+        classes are differentiated based on the number of hosts it supports on the network.
+        There are five types of IPv4 classes and are based on the first octet of IP addresses
+        which are classified as Class A, B, C, D, or E.</li><br>
+        </ul>
             
+
+        <br><br id="t5"><p><h4>OSI (Open System Interconnections) (Imp) :</h4> It is a network architecture model based
+        on the ISO standards. It is called the OSI model as it deals with connecting the systems
+        that are open for communication with other systems. <b><u>The OSI model has seven layers.</u></b>
+        The principles used to arrive at the seven layers can be summarized briefly as below:</p>
+
+        <ol>
+            <li>Create a new layer if a different abstraction is needed.</li>
+            <li>Each layer should have a well-defined function.</li>
+            <li>The function of each layer is chosen based on internationally standardized
+        protocols.</li>
+        </ol>
+
+
+            <h4>1. Physical Layer :</h4>
+            <ul>
+                <li>It is the lowest layer of the OSI reference model.</li>
+                <li>It is used for the transmission of an unstructured raw bit stream over a physical
+        medium.</li>
+                <li>Physical layer transmits the data either in the form of electrical/optical or
+        mechanical form.</li>
+                <li>The physical layer is mainly used for the physical connection between the
+        devices, and such physical connection can be made by using twisted-pair cable,
+        fibre-optic or wireless transmission media.</li>
+            </ul>
+            <br><h4>2. DataLink Layer :</h4><br>
+            <ul>
+                <li>It is used for transferring the data from one node to another node.</li>
+                <li>It receives the data from the network layer and converts the data into data frames
+        and then attaches the physical address to these frames which are sent to the
+        physical layer.</li>
+                <li>It enables the error-free transfer of data from one node to another node.</li>
+            </ul>
+
+            <h4>Functions of Data-link layer :</h4><br>
+            <ul>
+                <li><b>Frame synchronization :</b> Data-link layer converts the data into frames, and it ensures
+        that the destination must recognize the starting and ending of each frame.</li>
+                <li><b>Flow control :</b> Data-link layer controls the data flow within the network.</li>
+                <li><b>Error control :</b> It detects and corrects the error occurred during the transmission from
+        source to destination.</li>
+                <li><b>Addressing :</b> Data-link layers attach the physical address with the data frames so that
+        the individual machines can be easily identified.</li>
+                <li><b>Link management :</b> Data-link layer manages the initiation, maintenance and termination
+        of the link between the source and destination for the effective exchange of data.</li>
+            </ul>
+        
+        <br><h4>3. Network Layer :</h4><br>
+        <ul>
+            <li>Network layer converts the logical address into the physical address.</li>
+            <li>The routing concept means it determines the best route for the packet to travel from
+        source to the destination.</li>
+            
+        </ul>
+
+        <h4>Functions of network layer :</h4><br>
+        <ul>
+            <li><b>Routing :</b> The network layer determines the best route from source to destination. This
+        function is known as routing.</li>
+            <li><b>Logical addressing :</b> The network layer defines the addressing scheme to identify each
+        device uniquely.</li>
+            <li><b>Packetizing :</b> The network layer receives the data from the upper layer and converts the
+        data into packets. This process is known as packetizing.</li>
+            <li><b>Internetworking :</b> The network layer provides the logical connection between the
+        different types of networks for forming a bigger network.</li>
+            <li><b>Fragmentation :</b> It is a process of dividing the packets into fragments.</li>
+        </ul>
+
+        <br><h4>4. Transport Layer :</h4><br>
+        <ul>
+            <li>It delivers the message through the network and provides error checking so that no error
+        occurs during the transfer of data.</li>
+            <li>It provides two kinds of services :
+                <ol>
+                    <li><b>Connection-oriented transmission :</b> In this transmission, the receiver sends the
+        acknowledgement to the sender after the packet has been received.</li>
+                    <li><b>Connectionless transmission :</b> In this transmission, the receiver does not send
+        the acknowledgement to the sender.</li>
+                </ol>
+            </li>
+        </ul>
+
+
+        <br><h4>5. Session Layer :</h4><br>
+        <ul>
+            <li>The main responsibility of the session layer is beginning, maintaining and ending the
+        communication between the devices.</li>
+            <li>Session layer also reports the error coming from the upper layers.</li>
+            <li>Session layer establishes and maintains the session between the two users.</li>
+        </ul>
+
+        <br><h4>6. Presentation Layer :</h4><br>
+        <ul>
+            <li>The presentation layer is also known as a Translation layer as it translates the data from
+        one format to another format.</li>
+            <li>At the sender side, this layer translates the data format used by the application layer to
+        the common format and at the receiver side, this layer translates the common format into
+        a format used by the application layer.</li>
+        </ul>
+
+        <h4>Functions of presentation layer :</h4>
+        <ul>
+            <li>Character code translation</li>
+            <li>Data conversion</li>
+            <li>Data compression</li>
+            <li>Data encryption</li>
+        </ul>
+
+        <br><h4>7. Application Layer :</h4><br>
+        <ul>
+            <li>Application layer enables the user to access the network.</li>
+            <li>It is the topmost layer of the OSI reference model.</li>
+            <li>Application layer protocols are file transfer protocol, simple mail transfer protocol,
+        domain name system, etc.</li>
+            <li>The most widely used application protocol is HTTP(Hypertext transfer protocol ). A user
+        sends the request for the web page using HTTP.</li>
+        </ul>
+
+        <br><p><h4>TCP/IP Reference Model :</h4>
+        <u>It is a compressed version of the OSI model with only <b>4 layers.</b></u> It was developed by the US Department of Defence (DoD) in the 1860s. The
+        name of this model is based on 2 standard protocols used i.e. TCP (Transmission
+        Control Protocol) and IP (Internet Protocol).</p>
+
+        <ol>
+            <li><b>Link :</b> Decides which links such as serial lines or classic Ethernet must be used
+        to meet the needs of the connectionless internet layer. Ex - Sonet, Ethernet</li>
+            <li><b>Internet :</b> The internet layer is the most important layer which holds the whole
+        architecture together. It delivers the IP packets where they are supposed to be
+        delivered. Ex - IP, ICMP.</li>
+            <li><b>Transport :</b> Its functionality is almost the same as the OSI transport layer. It
+        enables peer entities on the network to carry on a conversation. Ex - TCP, UDP
+        (User Datagram Protocol)</li>
+            <li><b>Application :</b> It contains all the higher-level protocols. Ex - HTTP, SMTP, RTP,
+        DNS.</li>
+        </ol>
+
+        <br><h4>HTTP and HTTPS :</h4>
+        <p><b>HTTP is the <u>HyperText Transfer Protocol</u></b> which defines the set of rules and standards
+        on how the information can be transmitted on the World Wide Web (WWW). It helps the
+        web browsers and web servers for communication. It is a 'stateless protocol' where each
+        command is independent with respect to the previous command. <u>HTTP is an
+        application layer protocol built upon the TCP. It uses port 80 by default.</u></p>
+
+        <p><b>HTTPS is the HyperText Transfer Protocol Secure or <u>Secure HTTP.</u></b> It is an advanced
+        and secured version of HTTP. On top of HTTP, SSL/TLS protocol is used to provide
+        security. <u>It enables secure transactions by encrypting the communication and also
+        helps identify network servers securely. It uses port 443 by default.</u></p>
+
+        <br id="t6"><h4>DNS (Imp) :</h4>
+        <ol>
+            <li>DNS is an acronym that stands for <u>Domain Name System</u>. DNS was introduced
+        by Paul Mockapetris and Jon Postel in 1983.</li>
+            <li>It is a naming system for all the resources over the internet which includes
+        physical nodes and applications. It is used to locate resources easily over a
+        network.</li>
+            <li>DNS is an internet which maps the domain names to their associated <u>IP addresses</u>.</li>
+            <li>Without DNS, users must know the IP address of the web page that you wanted
+        to access.</li>
+        </ol>
+        
+        <br><p><h4>Working of DNS (Imp) :</h4> If you want to visit the website "example", then the user will
+        type "<a href="https://www.example.com"><u>https://www.example.com</u></a>" into the address bar of the web browser. Once the
+        domain name is entered, then the domain name system will translate the domain name
+        into the IP address which can be easily interpreted by the computer. Using the IP
+        address, the computer can locate the web page requested by the user.</p>
+
+        <br><p><h4>DNS Forwarder :</h4> A forwarder is used with a DNS server when it receives DNS queries
+        that cannot be resolved quickly. So it forwards those requests to external DNS servers
+        for resolution. A DNS server which is configured as a forwarder will behave differently
+        than the DNS server which is not configured as a forwarder.</p>
+        
+        <br><p><h4>SMTP Protocol :</h4> SMTP is the <b>Simple Mail Transfer Protocol</b>. SMTP sets the rule for
+        communication between servers. This set of rules helps the software to transmit emails
+        over the internet. It supports both End-to-End and Store-and-Forward methods. <u>It is in
+        always-listening mode on port 25</u>.</p>
+
+        <br><br id="t7"><p><h4>Difference Between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) :</h4></p>
+        <ol>
+            <li><b>TCP</b> is a connection-oriented protocol, whereas <b>UDP</b> is a connectionless
+        protocol. A key <b>difference between TCP and UDP</b> is speed, as <b>TCP</b> is
+        comparatively slower than <b>UDP</b>. Overall, <b>UDP</b> is a much faster, simpler, and
+        efficient protocol, however, retransmission of lost data packets is only possible
+        with <b>TCP</b></li><br>
+            <li>TCP provides extensive error checking mechanisms. It is because it provides
+        flow control and acknowledgment of data. UDP has only the basic error
+        checking mechanism using checksums.</li>
+        </ol>
+        
+        <br><br><hr><br id="t8">
+        
+        <h3>Important Protocols</h3>
+        <p>A protocol is a set of rules which is used to govern all the aspects of information
+        communication.The main elements of a protocol are :</p>
+        <ul>
+            <li><b>Syntax :</b> It specifies the structure or format of the data. It also specifies the order in which
+        they are presented.</li>
+            <li><b>Semantics :</b> It specifies the meaning of each section of bits.</li>
+            <li><b>Timing :</b> Timing specifies two characteristics: When data should be sent and how fast it
+        can be sent.</li>
+        </ul>
+
+        <br><p><h4>DHCP :</h4> DHCP is the <b>Dynamic Host Configuration Protocol</b>. It is an application layer
+        protocol used to auto-configure devices on IP networks enabling them to use the TCP
+        and UDP-based protocols. The DHCP servers auto-assign the IPs and other network
+        configurations to the devices individually which enables them to communicate over the
+        IP network. It helps to get the subnet mask, IP address and helps to resolve the DNS.
+        <u> It uses port 67 by default</u>.</p>
+
+        <br><p><h4>FTP :</h4> FTP is a <b>File Transfer Protocol</b>. It is an application layer protocol used to transfer
+        files and data reliably and efficiently between hosts. It can also be used to download files
+        from remote servers to your computer. <u>It uses port 27 by default</u>.</p>
+
+        <br><p><h4>ICMP :</h4> ICMP is the <b>Internet Control Message Protocol</b>. It is a network layer protocol
+        used for error handling. It is mainly used by network devices like routers for diagnosing
+        the network connection issues and crucial for error reporting and testing if the data is
+        reaching the preferred destination in time. <u>It uses port 7 by default</u>.</p>
+
+        <br><p><h4>ARP :</h4> ARP is <b>Address Resolution Protocol</b>. It is a network-level protocol used to
+        convert the logical address i.e. IP address to the device's physical address i.e. MAC
+        address. It can also be used to get the MAC address of devices when they are trying to
+        communicate over the local network.</p>
+
+        <br><p><h4>RIP :</h4> RIP stands for <b>Routing Information Protocol</b>. It is accessed by the routers to send
+        data from one network to another. RIP is a dynamic protocol which is used to find the
+        best route from source to the destination over a network by using the hop count
+        algorithm. Routers use this protocol to exchange the network topology information. This
+        protocol can be used by small or medium-sized networks.</p>
+
+        <br><br id="t9"><h4>MAC address and IP address (Imp) :</h4>
+        <ol>
+            <li>Both MAC (Media Access Control) Address and IP Address are used to <b>uniquely
+        define a device on the internet.</b> NIC Card's Manufacturer provides the MAC Address,
+        on the other hand Internet Service Provider provides IP Address.</li><br>
+            <li><b>The main difference between MAC and IP address</b> is that MAC Address is used to
+        ensure the physical address of a computer. It uniquely identifies the devices on a
+        network. While IP addresses are used to uniquely identify the connection of a network
+        with that device taking part in a network.</li>
+        </ol>
+        
+        <br><br><h4>Ipconfig and Ifconfig :</h4>
+        <ol>
+            <li><b>Ipconfig :</b> Internet Protocol Configuration, It is a command used in Microsoft operating
+        systems to view and configure network interfaces</li><br>
+            <li><b>Ifconfig :</b> Interface Configuration, It is a command used in MAC, Linux, UNIX operating
+        systems to view and configure network interfaces</li>
+        </ol>
+        
+        <br><br><p><h4>Firewall :</h4> The firewall is a network security system that is used to monitor the incoming
+        and outgoing traffic and blocks the same based on the firewall security policies. It acts as
+        a wall between the internet (public network) and the networking devices (a private
+        network). It is either a hardware device, software program, or a combination of both. It
+        adds a layer of security to the network.</p>
+
+        <br><br><hr><br id="t10">
+
+        <h3>Important Key Points</h3><br>
+
+            <ol>
+
+                <li><p><h4>What happens when you enter google.com in the web browser? (Most Imp)</h4><br>
+        <p><b>Steps :</b></p>
+        <ul style="list-style-type:disc;">
+            <li>Check the browser cache first if the content is fresh and present in the cache display the
+        same.</li>
+            <li>If not, the browser checks if the IP of the URL is present in the cache (browser and OS)
+        if not then requests the OS to do a DNS lookup using UDP to get the corresponding IP
+        address of the URL from the DNS server to establish a new TCP connection.</li>
+            <li>A new TCP connection is set between the browser and the server using three-way
+        handshaking.</li>
+            <li>An HTTP request is sent to the server using the TCP connection.</li>
+            <li>The web servers running on the Servers handle the incoming HTTP request and send
+        the HTTP response.</li>
+            <li>The browser processes the HTTP response sent by the server and may close the TCP
+        connection or reuse the same for future requests.</li>
+            <li>If the response data is cacheable then browsers cache the same.</li>
+            <li>Browser decodes the response and renders the content.</li>
+        </ul>
+        </p></li><br>
+
+
+                <li><p><h4>Hub :</h4> Hub is a networking device which is used to transmit the signal to each port
+        (except one port) to respond from which the signal was received. Hub is operated on a
+        Physical layer. In this packet filtering is not available. It is of two types: Active Hub,
+        Passive Hub.</p>
+        <p><h4>Switch :</h4> Switch is a network device which is used to enable the connection
+        establishment and connection termination on the basis of need. Switch is operated on
+        the Data link layer. In this packet filtering is available. It is a type of full duplex
+        transmission mode and it is also called an efficient bridge.</p></li><br>
+
+
+                <li><p><h4>Subnet :</h4> A subnet is a network inside a network achieved by the process called subnetting which
+        helps divide a network into subnets. It is used for getting a higher routing efficiency and
+        enhances the security of the network. It reduces the time to extract the host address
+        from the routing table.</p></li><br>
+
+
+                <li><p><h4><u>The reliability of a network</u> can be measured by the following factors :</h4>
+        <ul style="list-style-type:disc;">
+            <li><b>Downtime :</b> The downtime is defined as the required time to recover.</li>
+            <li><b>Failure Frequency :</b> It is the frequency when it fails to work the way it is intended.</li>
+            <li><b>Catastrophe :</b> It indicates that the network has been attacked by some unexpected event
+            such as fire, earthquake.</li>
+        </ul>
+        </p></li><br>
+
+
+                <li><p><h4>There are mainly two criteria which make a <u>network effective and efficient :</u></h4>
+        <ul style="list-style-type:disc;">
+            <li><b>Performance :</b> performance can be measured in many ways like transmit time and
+        response time.</li>
+            <li><b>Reliability :</b> reliability is measured by frequency of failure.</li>
+            <li><b>Robustness :</b> robustness specifies the quality or condition of being strong and in good
+        condition.</li>
+            <li><b>Security :</b> It specifies how to protect data from unauthorized access and viruses.</li>
+        </ul>
+        </p></li><br>
+
+
+                <li><p><h4>Node and Link :</h4> A network is a connection setup of two or more computers directly
+        connected by some physical mediums like optical fiber or coaxial cable. This physical
+        medium of connection is known as a link, and the computers that it is connected to are
+        known as nodes.</p></li><br>
+
+
+                <li><p><h4>Gateway and router :</h4> A node that is connected to two or more networks is commonly
+        known as a gateway. It is also known as a router. It is used to forward messages from
+        one network to another. <b>Both the gateway and router regulate the traffic in the
+        network. Differences between gateway and router:</b> A router sends the data between
+        two similar networks while gateway sends the data between two dissimilar networks.</p></li><br>
+
+
+                <li><p><h4>NIC (Imp) :</h4> NIC stands for <b>Network Interface Card</b>. It is a peripheral card attached to
+        the PC to connect to a network. Every NIC has its own MAC address that identifies the
+        PC on the network. It provides a wireless connection to a local area network. NICs were
+        mainly used in desktop computers.</p></li><br>
+
+
+                <li><p><h4>POP3 :</h4> POP3 stands for <b>Post Office Protocol version3</b>. POP is responsible for accessing the
+        mail service on a client machine. POP3 works on two models such as Delete mode and
+        Keep mode.</p></li><br>
+
+
+                <li><p><h4>Private IP Address :</h4> There are three ranges of IP addresses that have been reserved
+        for IP addresses. They are not valid for use on the internet. If you want to access the
+        internet on these private IPs, you must use a proxy server or NAT server.
+        </p>
+        <p><h4>Public IP Address :</h4> A public IP address is an address taken by the Internet Service
+        Provider which facilitates communication on the internet.</p></li><br>
+
+
+                <li><p><h4>RAID ( Redundant Array of Inexpensive/Independent Disks) :</h4> It is a method to provide
+        Fault Tolerance by using multiple Hard Disc Drives.</p></li><br>
+
+
+                <li><p><h4>Netstat :</h4> It is a command line utility program. It gives useful information about the
+        current TCP/IP setting of a connection.</p></li><br>
+
+
+                <li><p><h4>Ping :</h4> The "ping" is a utility program that allows you to check the connectivity between
+        the network devices. You can ping devices using its IP address or name.</p></li><br>
+
+
+                <li><p><h4>P2P(peer-peer processes) :</h4> The processes on each machine that communicate at a given layer are called
+        peer-peer processes.</p></li><br>
+                
+
+                <li><p><h4>Unicasting :</h4> If the message is sent to a single node from the source then it is known as
+        unicasting. This is commonly used in networks to establish a new connection.</p></li>
+
+        <p><h4>Anycasting :</h4> If the message is sent to any of the nodes from the source then it is known
+        as anycasting. It is mainly used to get the content from any of the servers in the Content
+        Delivery System.</p>
+
+        <p><h4>Multicasting :</h4> If the message is sent to a subset of nodes from the source then it is
+        known as multicasting. Used to send the same data to multiple receivers.</p>
+
+        <p><h4>Broadcasting :</h4> If the message is sent to all the nodes in a network from a source then it
+        is known as broadcasting. DHCP and ARP in the local network use broadcasting.</p><br>
+                    
     </ol>
 
 
@@ -1680,7 +1679,7 @@ winDow.onclick = () => {
 }
 
     
-
+//text style
 font.addEventListener('click', changeToggle1);
 light.addEventListener('click', changeToggle2);
 
@@ -1726,6 +1725,7 @@ if (fontSelect.value === "option1") {
 });
 
 
+//text size
 let n = 16;
 increaseButton.addEventListener("click", function() {
 if (n < 24) {
@@ -1757,6 +1757,7 @@ if (n > 8) {
 });
 
 
+//text align
 align.addEventListener('change', function() {
 
 if (align.value === "option1") {
@@ -1769,6 +1770,7 @@ if (align.value === "option1") {
 });
 
 
+//theme color
 function themeColor(clr1, clr2, clr3, clr4, clr5, clr6, clr7)  { 
     document.body.style.backgroundColor = clr1;
     topic.style.backgroundColor = clr5;
@@ -1882,6 +1884,7 @@ pa2.addEventListener('click', function () {
 });
 
 
+
 //hello
 let line1 = document.getElementById("line1");
 let line2 = document.getElementById("line2");
@@ -1926,8 +1929,6 @@ function typeWriter() {
 
     let len1 = t1.length + t2.length;
     let len2 = t1.length + t2.length + t3.length;
-    // console.log(len1);
-    // console.log(len2);
 
   if (i < t1.length) {
     blink1.style.display = "inline";
@@ -1994,6 +1995,38 @@ moreNote.addEventListener('click', function() {
     }
     
 });
+
+
+// JavaScript to handle swiping and toggling the side navigation bar
+let startX;
+let currentX;
+const swipeThreshold = 50;
+
+document.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove", (e) => {
+    currentX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchend", () => {
+    if (startX - currentX > swipeThreshold) {
+        closeSideNav(); 
+    } else if (currentX - startX > swipeThreshold) {
+        openSideNav();
+    }
+});
+
+function openSideNav() {
+    topic.style.transform = "translateX(0)";
+    topic.style.boxShadow = "1px 0 100px 0 #000";
+}
+
+function closeSideNav() {
+    topic.style.transform = "translateX(-100%)";
+    topic.style.boxShadow = "0 0 0 0 #000";
+}
 
     </script>
 </body>
