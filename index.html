@@ -510,6 +510,7 @@
             
             #name {
                 letter-spacing: 0;
+                font-size: medium;
             }
             
         }
@@ -1866,9 +1867,7 @@ pa1.addEventListener('click', function () {
         topic.style.transform = "translateX(-100%)";
         topic.style.boxShadow = "0 0 0 0 #000";
         isActive2 = true;
-    }
-    
-
+    } 
 });
 
 pa2.addEventListener('click', function () {
@@ -1893,12 +1892,13 @@ let line3 = document.getElementById("line3");
 let blink1 = document.getElementById("blink1");
 let blink2 = document.getElementById("blink2");
 let blink3 = document.getElementById("blink3");
+
 blink1.style.display = "none";
 blink2.style.display = "none";
 blink3.style.display = "none";
 
-let cross = document.getElementById("cross");
 let btn = document.getElementById("btn");
+let cross = document.getElementById("cross");
 let hello = document.getElementById("hello");
 let userName = document.getElementById("name");
 let inputName = document.getElementById("inputName");
@@ -1973,9 +1973,9 @@ cross.addEventListener('click',function() {
 
 
 
-
+// Check if Enter key (keyCode 13) is pressed
 userName.addEventListener("keydown", function(event) {
-    if (event.keyCode === 13) { // Check if Enter key (keyCode 13) is pressed
+    if (event.keyCode === 13) { 
         typeWriter();
     }
 });
@@ -1998,35 +1998,40 @@ moreNote.addEventListener('click', function() {
 
 
 // JavaScript to handle swiping and toggling the side navigation bar
-let startX;
-let currentX;
-const swipeThreshold = 50;
+if (mediaQuery.matches) {
+    let startX;
+    let currentX;
+    const swipeThreshold = 50;
 
-document.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-});
+    winDow.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
 
-document.addEventListener("touchmove", (e) => {
-    currentX = e.touches[0].clientX;
-});
+    winDow.addEventListener("touchmove", (e) => {
+        currentX = e.touches[0].clientX;
+    });
 
-document.addEventListener("touchend", () => {
-    if (startX - currentX > swipeThreshold) {
-        closeSideNav(); 
-    } else if (currentX - startX > swipeThreshold) {
-        openSideNav();
+    winDow.addEventListener("touchend", () => {
+        if (startX - currentX > swipeThreshold) {
+            closeSideNav(); 
+        } else if (currentX - startX > swipeThreshold) {
+            openSideNav();
+        }
+    });
+
+    function openSideNav() {
+        topic.style.transform = "translateX(0)";
+        topic.style.boxShadow = "1px 0 100px 0 #000";
+        isActive2 = false;
     }
-});
 
-function openSideNav() {
-    topic.style.transform = "translateX(0)";
-    topic.style.boxShadow = "1px 0 100px 0 #000";
+    function closeSideNav() {
+        topic.style.transform = "translateX(-100%)";
+        topic.style.boxShadow = "0 0 0 0 #000";
+        isActive2 = true;
+    }
 }
 
-function closeSideNav() {
-    topic.style.transform = "translateX(-100%)";
-    topic.style.boxShadow = "0 0 0 0 #000";
-}
 
     </script>
 </body>
